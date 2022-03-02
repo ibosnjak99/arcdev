@@ -10,7 +10,6 @@ import { SwipeableDrawer } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import IconButton from "@material-ui/core/IconButton";
 import { List, ListItem, ListItemText } from "@material-ui/core";
-import zIndex from "@material-ui/core/styles/zIndex";
 
 function HideOnScroll(props) {
   const { children, window } = props;
@@ -108,7 +107,9 @@ const useStyles = makeStyles(theme => ({
     },
   },
   drawerItemSelected: {
-    opacity: 1,
+    '& .MuiListItemText-root': {
+      opacity: 1
+    }
   },
   appBar: {
     zIndex: theme.zIndex.modal + 1,
