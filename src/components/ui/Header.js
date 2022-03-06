@@ -49,7 +49,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   tabContainer: {
-    margin: 'auto',
+    ...theme.fullPageWidth,
   },
   tab: {
     ...theme.typography.tab,

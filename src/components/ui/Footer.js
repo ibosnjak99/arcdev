@@ -67,7 +67,7 @@ export default function Footer(props) {
     return (
         <footer className={classes.footer}>
             <Hidden smDown>
-                <Grid container justify='center' className={classes.mainContainer}>
+                <Grid container justifyContent='center' className={classes.mainContainer}>
                     <Grid item className={classes.gridItem} >
                         <Grid container direction='column'>
                             <Grid item
@@ -136,7 +136,7 @@ export default function Footer(props) {
                 className={classes.adornment}
             />
 
-            <Grid container justify="flex-end" className={classes.socialContainer}>
+            <Grid container justifyContent="flex-end" className={classes.socialContainer}>
                 <Grid item component={'a'} href={'http://www.facebook.com'} className={classes.icon} rel={"noopener noreferrer"} target="_blank">
                     <img alt="fb logo" src={facebook} className/>
                 </Grid>

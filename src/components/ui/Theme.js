@@ -1,7 +1,7 @@
 import { createTheme } from '@material-ui/core/styles';
 
-const arcBlue="#0B72B9"
-const arcOrange="#FFBA60"
+const arcBlue='0B72B9'
+const arcOrange='#FFBA60'
 
 export default createTheme({
     palette: {
@@ -16,6 +16,10 @@ export default createTheme({
             main: `${arcOrange}`,
         },
     },
+    fullPageWidth: {
+        maxWidth: 1366,
+        margin: 'auto'
+    },
     typography: {
         tab: {
             fontFamily: 'Raleway',
@@ -25,6 +29,13 @@ export default createTheme({
             fontFamily: 'Raleway',
             fontWeight: 600,
             fontSize: '1rem',
-        }
+        },
+        h2: {
+            fontFamily: 'Quicksand',
+            fontWeight: 700,
+            fontSize: '2.5rem',
+            color: `${arcBlue}`,
+            lineHeight: 1.5
+        },
     }
 })
