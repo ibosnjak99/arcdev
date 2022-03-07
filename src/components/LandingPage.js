@@ -1,8 +1,10 @@
 import React from 'react';
 import Lottie from 'react-lottie';
+import { useTheme } from '@material-ui/core/styles';
 import { makeStyles, Grid, Button, Typography } from '@material-ui/core';
 import ButtonArrow from '../components/ui/ButtonArrow';
 import animationData from '../animations/landinganimation/data';
+import supervisorLogo from '../assets/supervisor-logo.png';
 
 const useStyles = makeStyles(theme => ({
         fullPageWidth: {
@@ -11,7 +13,7 @@ const useStyles = makeStyles(theme => ({
         heroTextContainer: {
             minWidth: '25em',
             marginLeft: '1em',
-            maxWidth: '35em',
+            maxWidth: '30em',
             [theme.breakpoints.down('sm')]: {
                 margin: 'auto'
             },
@@ -25,7 +27,7 @@ const useStyles = makeStyles(theme => ({
             marginLeft: 0,
             maxWidth: '35em',
             }
-            },
+        },
         estimateButton: {
             backgroundColor: theme.palette.common.orange,
             color: 'white',
@@ -49,12 +51,40 @@ const useStyles = makeStyles(theme => ({
         },
         buttonsContainer: {
             marginTop: 20
+        },
+        icon: {
+            width: '18em',
+        },
+        serviceContainer: {
+            backgroundColor: '#f7f7f7',
+            padding: '2em 0 2em 0',
+            margin: '8em auto',
+            justifyContent: 'space-around',
+            [theme.breakpoints.between('xs','md')]: {
+                padding: '5%',
+                width: '100%',
+            },
+        },
+        serviceContainerLeft: {
+            paddingTop: '1.5em',
+        },
+        learnButton2: {
+            marginBottom: '2em'
+        },
+        h4: {
+            padding: '0 2em 0 0.5em',
+            ...theme.typography.h4,
+            color: 'white',
+            width: 'fit-content',
+            backgroundColor: theme.palette.common.blue,
+            borderRadius: '0 0 20px 0'
         }
     }
 ));
 
 export default function LandingPage() {
     const classes = useStyles();
+    const theme = useTheme(); 
 
     const defaultOptions = {
         loop: true,
@@ -69,6 +99,7 @@ export default function LandingPage() {
         <React.Fragment>
             <br/><br/><br/><br/><br/>
             <Grid container direction='column'>
+                {/*----Hero block----*/}
                 <Grid item>
                     <Grid container className={classes.fullPageWidth} justifyContent='flex-end' alignItems='center'>
                         <Grid sm item className={classes.heroTextContainer}>
@@ -95,6 +126,26 @@ export default function LandingPage() {
                             <Lottie options={defaultOptions} height={'100%'} width={'100%'}/>
                         </Grid>
                     </Grid>
+                </Grid>
+                {/*----Services block----*/}
+                <Grid container className={[classes.serviceContainer, classes.fullPageWidth]} alignItems='center'> 
+                    <Grid item className={classes.serviceContainerLeft}>
+                        <Typography className={classes.h4}>Supervisor</Typography>
+                        <Typography variant='subtitle1' className={classes.subtitle1}>
+                            Imagine having a solution that can replace multiple security software interfaces that you currently use. 
+                        </Typography>
+                        <Typography variant='subtitle2'>Imagine Supervisor.</Typography>
+                        <Button className={[classes.learnButton, classes.learnButton2]} variant='outlined'>
+                            Learn more
+                            <span style={{ marginRight: 7}}/>
+                            <ButtonArrow
+                                width={15}
+                                height={15}
+                                fill={theme.palette.common.blue}
+                            />
+                        </Button>
+                    </Grid>
+                    <Grid item><img alt='sv-logo' className={classes.icon} src={supervisorLogo}/></Grid>
                 </Grid>
             </Grid>
         </React.Fragment>

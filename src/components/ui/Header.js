@@ -38,6 +38,9 @@ const useStyles = makeStyles(theme => ({
   },
   logo: {
     height: '4em',
+    [theme.breakpoints.down("md")]: {
+      height: '5em',
+    },
   },
   logoContainer: {
     padding: '0',
@@ -96,10 +99,9 @@ const useStyles = makeStyles(theme => ({
     ...theme.typography.tab,
     color: 'white',
     textAlign: 'center',
-    height: '30px',
-    padding: '0',
+    padding: '15px 0',
     opacity: 0.7,
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down('md')]: {
       fontSize: '1.2em',
     },
   },
