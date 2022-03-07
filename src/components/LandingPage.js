@@ -9,21 +9,29 @@ const useStyles = makeStyles(theme => ({
             ...theme.fullPageWidth,
         },
         heroTextContainer: {
-            minWidth: '22em',
-            marginLeft: '1em'
+            minWidth: '25em',
+            marginLeft: '1em',
+            maxWidth: '35em',
+            [theme.breakpoints.down('sm')]: {
+                margin: 'auto'
+            },
         },
         animation: {
             maxWidth: '50em',
             minWidth: '20em',
             marginTop: '2em',
             marginLeft: '10%',
+            [theme.breakpoints.only('sm')]: {
+            marginLeft: 0,
+            maxWidth: '35em',
+            }
             },
         estimateButton: {
             backgroundColor: theme.palette.common.orange,
             color: 'white',
             borderRadius: 50,
             height: 45,
-            width: 160,
+            width: 170,
             marginRight: 20,
             fontFamily: 'Quicksand',
             '&:hover': {
@@ -36,7 +44,7 @@ const useStyles = makeStyles(theme => ({
             color: theme.palette.common.blue,
             borderColor: theme.palette.common.blue,
             height: 45,
-            width: 160,
+            width: 170,
             fontFamily: 'Quicksand',
         },
         buttonsContainer: {
