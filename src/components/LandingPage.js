@@ -5,6 +5,7 @@ import { makeStyles, Grid, Button, Typography } from '@material-ui/core';
 import ButtonArrow from '../components/ui/ButtonArrow';
 import animationData from '../animations/landinganimation/data';
 import supervisorLogo from '../assets/supervisor-logo.png';
+import tz from '../assets/tz.png';
 
 const useStyles = makeStyles(theme => ({
         fullPageWidth: {
@@ -54,19 +55,26 @@ const useStyles = makeStyles(theme => ({
         },
         icon: {
             width: '18em',
+            margin: '0 2em',
         },
         serviceContainer: {
             backgroundColor: '#f7f7f7',
             padding: '2em 0 2em 0',
-            margin: '8em auto',
-            justifyContent: 'space-around',
+            margin: '8em auto 0',
+            justifyContent: 'flex-start',
             [theme.breakpoints.between('xs','md')]: {
                 padding: '5%',
                 width: '100%',
+                justifyContent: 'center',
             },
         },
         serviceContainerLeft: {
+            marginLeft: '2em',
             paddingTop: '1.5em',
+            [theme.breakpoints.down('sm')]: {
+                justifyContent: 'center',
+                marginLeft: 0,
+            },
         },
         learnButton2: {
             marginBottom: '2em'
@@ -78,6 +86,14 @@ const useStyles = makeStyles(theme => ({
             width: 'fit-content',
             backgroundColor: theme.palette.common.blue,
             borderRadius: '0 0 20px 0'
+        },
+        serviceSecondContainer: {
+            margin: '0 auto',
+            paddingRight: '2em',
+            [theme.breakpoints.down('sm')]: {
+                justifyContent: 'center',
+                paddingRight: 0,
+            },
         }
     }
 ));
@@ -146,6 +162,30 @@ export default function LandingPage() {
                         </Button>
                     </Grid>
                     <Grid item><img alt='sv-logo' className={classes.icon} src={supervisorLogo}/></Grid>
+                </Grid>
+                <Grid 
+                    container 
+                    direction='row-reverse' 
+                    className={[classes.serviceContainer, classes.fullPageWidth, classes.serviceSecondContainer]} 
+                    alignItems='center'
+                    > 
+                    <Grid item className={classes.serviceContainerLeft}>
+                        <Typography className={classes.h4}>Tehnozavod</Typography>
+                        <Typography variant='subtitle1' className={classes.subtitle1}>
+                            Imagine having a solution that can replace multiple security software interfaces that you currently use. 
+                        </Typography>
+                        <Typography variant='subtitle2'>Imagine Supervisor.</Typography>
+                        <Button className={[classes.learnButton, classes.learnButton2]} variant='outlined'>
+                            Learn more
+                            <span style={{ marginRight: 7}}/>
+                            <ButtonArrow
+                                width={15}
+                                height={15}
+                                fill={theme.palette.common.blue}
+                            />
+                        </Button>
+                    </Grid>
+                    <Grid item><img alt='sv-logo' className={classes.icon} src={tz}/></Grid>
                 </Grid>
             </Grid>
         </React.Fragment>
