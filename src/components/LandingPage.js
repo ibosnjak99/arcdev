@@ -6,7 +6,7 @@ import ButtonArrow from '../components/ui/ButtonArrow';
 import animationData from '../animations/landinganimation/data';
 import supervisorLogo from '../assets/supervisor-logo.png';
 import tz from '../assets/tz.png';
-import cardBackground from '../assets/cardBackground.jpg'
+import orangeBackground from '../assets/orange_background.jpg'
 
 const useStyles = makeStyles(theme => ({
         fullPageWidth: {
@@ -63,6 +63,7 @@ const useStyles = makeStyles(theme => ({
             padding: '2em 0 2em 0',
             margin: '8em auto 0',
             justifyContent: 'flex-start',
+            height: 'fit-content',
             [theme.breakpoints.between('xs','md')]: {
                 padding: '5%',
                 width: '100%',
@@ -96,14 +97,26 @@ const useStyles = makeStyles(theme => ({
                 paddingRight: 0,
             },
         },
+        cardsContainer: {
+            padding: '1em 0',
+            justifyContent: 'space-around',
+            backgroundImage: `url(${orangeBackground})`,
+        },
         card: {
-            margin: '2em auto',
-            padding: '3rem',
-            maxWidth: 'fit-content'
+            margin: '0.5em',
+            padding: '2rem',
+            maxWidth: '14em',
+            boxShadow: 4,
+            [theme.breakpoints.up('lg')]: {
+                maxWidth: '17em',
+            },
         },
         cardTitle: {
             textAlign: 'center',
             marginTop: '1rem'
+        },
+        cardIcon: {
+            width: '100%',
         }
     }
 ));
@@ -154,67 +167,99 @@ export default function LandingPage() {
                     </Grid>
                 </Grid>
                 {/*----Services block----*/}
-                <Grid item>
-                    <Grid container className={[classes.serviceContainer, classes.fullPageWidth]} alignItems='center'> 
-                        <Grid item className={classes.serviceContainerLeft}>
-                            <Typography className={classes.h4}>Supervisor</Typography>
-                            <Typography variant='subtitle1' className={classes.subtitle1}>
-                                Imagine having a solution that can replace multiple security software interfaces that you currently use. 
-                            </Typography>
-                            <Typography variant='subtitle2'>Imagine Supervisor.</Typography>
-                            <Button className={[classes.learnButton, classes.learnButton2]} variant='outlined'>
-                                Learn more
-                                <span style={{ marginRight: 7}}/>
-                                <ButtonArrow
-                                    width={15}
-                                    height={15}
-                                    fill={theme.palette.common.blue}
-                                />
-                            </Button>
-                        </Grid>
-                        <Grid item><img alt='sv-logo' className={classes.icon} src={supervisorLogo}/></Grid>
+                <Grid container className={[classes.serviceContainer, classes.fullPageWidth]} alignItems='center'> 
+                    <Grid item className={classes.serviceContainerLeft}>
+                        <Typography className={classes.h4}>Supervisor</Typography>
+                        <Typography variant='subtitle1' className={classes.subtitle1}>
+                            Imagine having a solution that can replace multiple security software interfaces that you currently use. 
+                        </Typography>
+                        <Typography variant='subtitle2'>Imagine Supervisor.</Typography>
+                        <Button className={[classes.learnButton, classes.learnButton2]} variant='outlined'>
+                            Learn more
+                            <span style={{ marginRight: 7}}/>
+                            <ButtonArrow
+                                width={15}
+                                height={15}
+                                fill={theme.palette.common.blue}
+                            />
+                        </Button>
                     </Grid>
-                    <Grid 
-                        container 
-                        direction='row-reverse' 
-                        className={[classes.serviceContainer, classes.fullPageWidth, classes.serviceSecondContainer]} 
-                        alignItems='center'
-                        > 
-                        <Grid item className={classes.serviceContainerLeft}>
-                            <Typography className={classes.h4}>Tehnozavod</Typography>
-                            <Typography variant='subtitle1' className={classes.subtitle1}>
-                                Imagine having a solution that can replace multiple security software interfaces that you currently use. 
-                            </Typography>
-                            <Typography variant='subtitle2'>Imagine Supervisor.</Typography>
-                            <Button className={[classes.learnButton, classes.learnButton2]} variant='outlined'>
-                                Learn more
-                                <span style={{ marginRight: 7}}/>
-                                <ButtonArrow
-                                    width={15}
-                                    height={15}
-                                    fill={theme.palette.common.blue}
-                                />
-                            </Button>
-                        </Grid>
-                        <Grid item><img alt='sv-logo' className={classes.icon} src={tz}/></Grid>
+                    <Grid item><img alt='sv-logo' className={classes.icon} src={supervisorLogo}/></Grid>
+                </Grid>
+                <Grid 
+                    container 
+                    direction='row-reverse' 
+                    className={[classes.serviceContainer, classes.fullPageWidth, classes.serviceSecondContainer]} 
+                    alignItems='center'
+                    > 
+                    <Grid item className={classes.serviceContainerLeft}>
+                        <Typography className={classes.h4}>Tehnozavod</Typography>
+                        <Typography variant='subtitle1' className={classes.subtitle1}>
+                            Imagine having a solution that can replace multiple security software interfaces that you currently use. 
+                        </Typography>
+                        <Typography variant='subtitle2'>Imagine Supervisor.</Typography>
+                        <Button className={[classes.learnButton, classes.learnButton2]} variant='outlined'>
+                            Learn more
+                            <span style={{ marginRight: 7}}/>
+                            <ButtonArrow
+                                width={15}
+                                height={15}
+                                fill={theme.palette.common.blue}
+                            />
+                        </Button>
                     </Grid>
+                    <Grid item><img alt='sv-logo' className={classes.icon} src={tz}/></Grid>
                 </Grid>
                 {/*----Card block----*/}
-                <Grid>
-                    <Card className={classes.card}>
-                        <CardContent>
-                            <Grid container direction='column'>
-                                <Grid item>
-                                    <img alt='sv-logo' className={classes.cardIcon} src={supervisorLogo}/>
+                <Grid container direction='row' className={[classes.fullPageWidth, classes.cardsContainer]}>
+                    <Grid item>
+                        <Card className={classes.card}>
+                            <CardContent>
+                                <Grid container direction='column'>
+                                    <Grid item>
+                                        <img alt='sv-logo' className={classes.cardIcon} src={supervisorLogo}/>
+                                    </Grid>
+                                    <Grid item>
+                                        <Typography variant='subtitle2' className={classes.cardTitle}>
+                                            Imagine Supervisor.
+                                        </Typography>
+                                    </Grid>
                                 </Grid>
-                                <Grid item>
-                                    <Typography variant='subtitle2' className={classes.cardTitle}>
-                                        Imagine Supervisor.
-                                    </Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item>
+                        <Card className={classes.card}>
+                            <CardContent>
+                                <Grid container direction='column'>
+                                    <Grid item>
+                                        <img alt='sv-logo' className={classes.cardIcon} src={supervisorLogo}/>
+                                    </Grid>
+                                    <Grid item>
+                                        <Typography variant='subtitle2' className={classes.cardTitle}>
+                                            Imagine Supervisor.
+                                        </Typography>
+                                    </Grid>
                                 </Grid>
-                            </Grid>
-                        </CardContent>
-                    </Card>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item>
+                        <Card className={classes.card}>
+                            <CardContent>
+                                <Grid container direction='column'>
+                                    <Grid item>
+                                        <img alt='sv-logo' className={classes.cardIcon} src={supervisorLogo}/>
+                                    </Grid>
+                                    <Grid item>
+                                        <Typography variant='subtitle2' className={classes.cardTitle}>
+                                            Imagine Supervisor.
+                                        </Typography>
+                                    </Grid>
+                                </Grid>
+                            </CardContent>
+                        </Card>
+                    </Grid>
                 </Grid>
             </Grid>
         </React.Fragment>

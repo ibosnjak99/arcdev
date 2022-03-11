@@ -67,7 +67,7 @@ const useStyles = makeStyles(theme => ({
     paddingLeft: '0px',
   },
   menu: {
-    backgroundColor: theme.palette.common.blue,
+    backgroundColor: theme.palette.common.orange,
     color: 'white',
     textTransform: 'uppercase',
     fontFamily: 'Raleway',
@@ -91,7 +91,7 @@ const useStyles = makeStyles(theme => ({
     width: '40px',
   },
   drawer: {
-    backgroundColor: theme.palette.common.blue,
+    backgroundColor: theme.palette.common.orange,
     width: '100%',
     height: 'auto'
   },
@@ -180,7 +180,7 @@ export default function Header(props) {
     
   const tabs = (
     <React.Fragment>
-      <Tabs className={classes.tabContainer} value={props.value} onChange={handleChange} indicatorColor="secondary">
+      <Tabs className={classes.tabContainer} value={props.value} onChange={handleChange} indicatorColor='main'>
         {routes.map((route, index) => (
           <Tab
             key={`${route}${index}`}
@@ -190,7 +190,7 @@ export default function Header(props) {
           ))};
       </Tabs>
         <Menu
-          id="simple-menu"
+          id='simple-menu'
           anchorEl={anchorEl}
           open={openMenu}
           onClose={handleClose}
@@ -258,10 +258,10 @@ export default function Header(props) {
   return (
     <React.Fragment>
       <HideOnScroll>
-        <AppBar position="fixed" color="primary" className={classes.appBar}>
+        <AppBar position='fixed' color='secondary' className={classes.appBar}>
           <Toolbar disableGutters>
-            <Button component={Link} to="/" label="home" className={classes.logoContainer} onClick={() => props.setValue(0)} disableRipple>
-              <img src={logo} className={classes.logo} alt="logo" />
+            <Button component={Link} to='/' label='home' className={classes.logoContainer} onClick={() => props.setValue(0)} disableRipple>
+              <img src={logo} className={classes.logo} alt='logo' />
             </Button>
             {matches ? drawer : tabs}
           </Toolbar>
