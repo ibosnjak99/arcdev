@@ -19,7 +19,7 @@ export default createTheme({
         },
     },
     fullPageWidth: {
-        maxWidth: 1366,
+        maxWidth: 1920,
         margin: 'auto'
     },
     typography: {
@@ -52,7 +52,7 @@ export default createTheme({
             maxWidth: '25em'
         },
         subtitle2: {
-            fontFamily: 'Quicksand',
+            fontFamily: 'Raleway',
             fontSize: '1.65rem',
             fontWeight: '500',
             color: `${arcGrey}`,

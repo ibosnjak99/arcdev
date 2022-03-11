@@ -6,7 +6,8 @@ import ButtonArrow from '../components/ui/ButtonArrow';
 import animationData from '../animations/landinganimation/data';
 import supervisorLogo from '../assets/supervisor-logo.png';
 import tz from '../assets/tz.png';
-import orangeBackground from '../assets/orange_background.jpg'
+import orangeBackground from '../assets/orange_background.jpg';
+import infoBackground from '../assets/infoBackground.svg'
 
 const useStyles = makeStyles(theme => ({
         fullPageWidth: {
@@ -100,7 +101,7 @@ const useStyles = makeStyles(theme => ({
         cardsContainer: {
             padding: '1em 0',
             justifyContent: 'space-around',
-            backgroundImage: `url(${orangeBackground})`,
+            backgroundImage: `url(${infoBackground})`,
         },
         card: {
             margin: '0.5em',
@@ -117,6 +118,17 @@ const useStyles = makeStyles(theme => ({
         },
         cardIcon: {
             width: '100%',
+        },
+        infoContainer: {
+            alignItems: 'center',
+            backgroundImage: `url(${infoBackground})`,
+            height: '70em'
+        },
+        learnButton3: {
+            marginTop: -5,
+        },
+        infoContainerText: {
+            marginLeft: '3em'
         }
     }
 ));
@@ -259,6 +271,24 @@ export default function LandingPage() {
                                 </Grid>
                             </CardContent>
                         </Card>
+                    </Grid>
+                </Grid>
+                {/*----Info block----*/}
+                <Grid container direction='row' className={[classes.fullPageWidth, classes.infoContainer]}>
+                    <Grid item>
+                        <Grid container direction='column' className={classes.infoContainerText}>
+                            <Typography variant="h2" style={{color:'white'}}>About us</Typography>
+                            <Typography variant="subtitle2" style={{color:'white'}}>Best Softwares Ever</Typography>
+                            <Button className={[classes.learnButton, classes.learnButton3]} variant='outlined'>
+                            Learn more
+                            <span style={{ marginRight: 7}}/>
+                            <ButtonArrow
+                                width={15}
+                                height={15}
+                                fill={theme.palette.common.white}
+                            />
+                        </Button>
+                        </Grid>
                     </Grid>
                 </Grid>
             </Grid>
