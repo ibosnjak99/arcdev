@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { ThemeProvider } from '@material-ui/core/styles'
 import theme from "./ui/Theme";
 import LandingPage from "../components/LandingPage";
+import Contact from "../components/ui/Contact";
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
           <Route exact path="/" component={LandingPage}/>
           <Route exact path="/services" />
           <Route exact path="/about" />
-          <Route exact path="/contact" />
+          <Route exact path="/contact" component={Contact} />
         </Switch>
         <Footer value={value} setValue={setValue} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex}></Footer>
       </BrowserRouter>

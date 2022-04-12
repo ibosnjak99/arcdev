@@ -6,7 +6,6 @@ import ButtonArrow from '../components/ui/ButtonArrow';
 import animationData from '../animations/landinganimation/data';
 import supervisorLogo from '../assets/supervisor-logo.png';
 import tz from '../assets/tz.png';
-import orangeBackground from '../assets/orange_background.jpg';
 import infoBackground from '../assets/infoBackground.svg'
 
 const useStyles = makeStyles(theme => ({

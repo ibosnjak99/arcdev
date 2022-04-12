@@ -58,5 +58,22 @@ export default createTheme({
             color: `${arcGrey}`,
             marginBottom: '0.5em'
         }
+    },
+    overrides: {
+        MuiInputLabel: {
+            root: {
+                color: arcBlue
+            }
+        },
+        MuiInput: {
+            underline: {
+                '&:before': {
+                    borderBottom: `2px solid ${arcBlue}`
+                },
+                '&:hover:not($disabled):not($focused):not($error):before': {
+                    borderBottom: `2px solid ${arcBlue}`
+                }
+            }
+        }
     }
 })
